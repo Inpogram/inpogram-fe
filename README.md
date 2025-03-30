@@ -3,8 +3,8 @@
 ## Overview
 
 This project is a modern blogging platform developed with React for the frontend and Spring Boot for the backend. It provides users with a platform to write, publish, and engage with articles.
-![Home page](https://github.com/haibt1112/inpogram/blob/main/frontend/public/images/home-page.png)
-![Post details page](https://github.com/haibt1112/inpogram/blob/main/frontend/public/images/post-details-page.png)
+![Home page](https://github.com/Inpogram/inpogram-fe/blob/main/public/images/home-page.png)
+![Post details page](https://github.com/Inpogram/inpogram-fe/blob/main/public/images/post-details-page.png)
 
 ## Features
 
