@@ -1,11 +1,8 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import PostsPage from './pages/posts'
 import NavBar from './components/layout/NavBar'
-import AddPostPage from './pages/posts/add'
-import PostDetailsPage from './pages/posts/details'
+import AddPostPage from './modules/posts/pages/AddPostPage'
 import NotFound from './pages/errors/404'
-import EditPostPage from './pages/posts/details/edit'
 import React, { useEffect } from 'react'
 import Signin from './pages/auth/Signin'
 import Landing from './pages/landing'
@@ -18,6 +15,8 @@ import { ROLES } from './auth/authService'
 import { Provider, useDispatch, useSelector } from 'react-redux'
 import store, { AppDispatch, RootState } from './redux/store'
 import { initializeAuth } from './auth/authSlice'
+import PostsPage from './modules/posts/pages/PostsPage'
+import PostDetailsPage from './modules/posts/pages/PostDetailsPage'
 
 const App = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -81,7 +80,7 @@ const App = () => {
             />
           }
         >
-          <Route path="/posts/:postTitle/edit" element={<EditPostPage />} />
+          <Route path="/posts/:postTitle/edit" element={<AddPostPage />} />
         </Route>
 
         {/* missing routes */}

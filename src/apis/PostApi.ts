@@ -1,17 +1,21 @@
-import axios from 'axios'
 import useAxiosPrivate from '../hooks/useAxiosPrivate'
+import { API_BASE_URL } from '../constants'
 
-const postApi = {
-  addPost: (post: FormData) => {
-    const axiosPrivate = useAxiosPrivate()
-    const url = '/api/v1/posts'
-    return axiosPrivate.post(url, post)
-  },
-  getPostByTitle: (postTitle: string) => {
-    const axiosPrivate = useAxiosPrivate()
-    const url = `/api/v1/posts/${postTitle}`
-    return axiosPrivate.get(url)
-  }
+export const addPost = async (post: FormData) => {
+  const response = await fetch(`${API_BASE_URL}/api/v1/posts`, {
+    method: 'POST',
+    credentials: 'include',
+    body: post
+  })
+
+  if (!response.ok) throw new Error('Failed to create post')
+  const data: any = await response.json()
+  console.log({ data })
+
+  return data
 }
-
-export default postApi
+export const getPostByTitle = (postTitle: string) => {
+  const axiosPrivate = useAxiosPrivate()
+  const url = `/api/v1/posts/${postTitle}`
+  return axiosPrivate.get(url)
+}

@@ -1,47 +1,58 @@
 import React from 'react'
+import { PostFormData } from '../../../modules/posts/types'
+import { validationRules } from '../../../modules/posts/validation'
 
-type CommonInputType = {
+type CommonInputProps = {
   type: string
-  value: string
   className?: string
   id?: string
-  name?: string
+  name: keyof PostFormData
+  value?: any
   placeholder?: string
   defaultValue?: string
-  minDate?: string
+  disabled?: boolean
   onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-  onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  onFocus?: React.FocusEventHandler<HTMLInputElement>
+  onBlur?: React.FocusEventHandler<HTMLInputElement>
+  onChange?: React.ChangeEventHandler<HTMLInputElement>
 }
 
-const CommonInput: React.FC<CommonInputType> = ({
-  type,
-  value,
-  className,
-  id,
-  name,
-  placeholder,
-  defaultValue,
-  minDate,
-  onKeyDown,
-  onChange,
-  onFocus,
-}) => {
-  return (
-    <input
-      type={type}
-      className={className}
-      id={id}
-      name={name}
-      value={value}
-      onKeyDown={onKeyDown}
-      defaultValue={defaultValue}
-      placeholder={placeholder}
-      onChange={onChange}
-      onFocus={onFocus}
-      min={minDate}
-    />
-  )
-}
+const CommonInput = React.forwardRef<HTMLInputElement, CommonInputProps>(
+  (
+    {
+      type,
+      className,
+      id,
+      name,
+      value,
+      placeholder,
+      defaultValue,
+      disabled,
+      onKeyDown,
+      onFocus,
+      onBlur,
+      onChange
+    },
+    ref
+  ) => {
+    return (
+      <input
+        type={type}
+        className={className}
+        id={id}
+        name={name}
+        value={value}
+        placeholder={placeholder}
+        defaultValue={defaultValue}
+        disabled={disabled}
+        onKeyDown={onKeyDown}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onChange={onChange}
+        ref={ref}
+      />
+    )
+  }
+)
 
 export default CommonInput

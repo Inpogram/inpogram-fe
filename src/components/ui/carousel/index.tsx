@@ -3,11 +3,11 @@ import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 
 import PostCard from '../card/PostCard'
-import { IPost } from '../../../shared/interfaces'
+import { Post } from '../../../types/types'
 import React from 'react'
 
 type CustomCarouselProps = {
-  data: IPost[]
+  data: Post[]
   isOtherPosts?: boolean
 }
 
@@ -53,7 +53,7 @@ const CustomCarousel = ({ data }: CustomCarouselProps) => {
     >
       {data &&
         data.length > 0 &&
-        data.map((post: IPost) => (
+        data.map((post: Post) => (
           <div className="px-4 flex justify-center" key={post.id}>
             <PostCard key={post.id} post={post} isOtherPosts />
           </div>

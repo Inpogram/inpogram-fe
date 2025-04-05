@@ -9,6 +9,7 @@ type CommonButtonType = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick?: (e?: any) => void
   buttonRef?: React.RefObject<HTMLButtonElement>
+  disabled?: boolean
 }
 
 const CommonButton: React.FC<CommonButtonType> = ({
@@ -18,10 +19,17 @@ const CommonButton: React.FC<CommonButtonType> = ({
   className,
   onClick,
   buttonRef,
-  type = 'button',
+  disabled,
+  type = 'button'
 }) => {
   return (
-    <button type={type} className={className} onClick={onClick} ref={buttonRef}>
+    <button
+      type={type}
+      className={className}
+      onClick={onClick}
+      ref={buttonRef}
+      disabled={disabled}
+    >
       {startIcon}
       <div>{children}</div>
       {endIcon}

@@ -1,9 +1,9 @@
 import React from 'react'
-import { IPost } from '../../../shared/interfaces'
+import { Post } from '../../../types/types'
 import PostCard from '../../ui/card/PostCard'
 
 type AllPostsGridType = {
-  allPosts: IPost[]
+  allPosts: Post[]
 }
 
 const AllPostsGrid: React.FC<AllPostsGridType> = ({ allPosts }) => {

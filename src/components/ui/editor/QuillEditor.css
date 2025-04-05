@@ -1,0 +1,16 @@
+.quill-wrapper .ql-container {
+  border: 1px solid #cbd5e1; /* Gray-300 equivalent */
+  border-radius: 0.375rem;
+}
+
+.quill-wrapper .ql-toolbar {
+  border: 1px solid #cbd5e1;
+}
+
+.quill-wrapper.has-error .ql-container {
+  border-color: #ef4444; /* Red-600 equivalent */
+}
+
+.quill-wrapper.has-error .ql-toolbar {
+  border-color: #ef4444;
+}

@@ -34,13 +34,8 @@ const EditPostInformation = () => {
     isStartDateTimeDisabled
   } = useAppSelector(editPostSelector)
   const [showEmojiPicker, setShowEmojiPicker] = useState(false)
-  const {
-    validateBanner,
-    validateTitle,
-    validateNumParticipants,
-    validateTags,
-    validateDescription
-  } = usePostValidation()
+  const { validateBanner, validateTitle, validateNumParticipants } =
+    usePostValidation()
   useEffect(() => {
     dispatch(getPostFormatsThunk())
     dispatch(getPostTypesThunk())
