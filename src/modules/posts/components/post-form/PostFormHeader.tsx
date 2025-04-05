@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddPostHeader = () => {
+const PostFormHeader = () => {
   return (
     <div className="flex flex-row items-center justify-between ">
       <div className="flex flex-col items-start">
@@ -10,4 +10,4 @@ const AddPostHeader = () => {
   )
 }
 
-export default AddPostHeader
+export default PostFormHeader

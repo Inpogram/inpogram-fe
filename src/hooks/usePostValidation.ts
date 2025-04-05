@@ -30,12 +30,7 @@ const usePostValidation = () => {
     file: File,
     changeBannerErrorMessage: (payload: any) => AnyAction
   ) => {
-    const allowedExtensions = [
-      'image/png',
-      'image/jpg',
-      'image/jpeg',
-      'image/gif'
-    ]
+    const allowedExtensions = ['image/png', 'image/jpg', 'image/jpeg']
     const maxSize = 3 * 1024 * 1024 // 3MB
     let mess = ''
     if (!allowedExtensions.includes(file.type)) {

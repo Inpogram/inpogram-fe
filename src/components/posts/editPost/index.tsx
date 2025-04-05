@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import EditPostHeader from './EditPostHeader'
 import EditPostInformation from './EditPostInformation'
-import { IPost } from '../../../shared/interfaces'
+import { Post } from '../../../types/types'
 import { useAppDispatch, useAppSelector } from '../../../hooks'
 import { editPostSelector } from '../../../redux/selectors'
 import ResultPopup from '../../ui/popup/ResultPopup'
@@ -13,7 +13,7 @@ import usePostValidation from '../../../hooks/usePostValidation'
 import store from '../../../redux/store'
 
 type EditPostType = {
-  activityData: IPost
+  activityData: Post
   activityTitle: string
 }
 

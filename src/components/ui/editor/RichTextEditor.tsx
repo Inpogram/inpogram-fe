@@ -2,9 +2,11 @@ import React from 'react'
 import ReactQuill from 'react-quill'
 
 type RichTextEditorType = {
-  onChange: (content: string) => void
   value: string
+  wrapperClassname?: string
   className?: string
+  onChange: (content: string) => void
+  onBlur: () => void
 }
 
 const toolbarOptions = {
@@ -28,8 +30,9 @@ const toolbarOptions = {
 
 const RichTextEditor: React.FC<RichTextEditorType> = ({
   value,
+  className,
   onChange,
-  className
+  onBlur
 }) => {
   return (
     <div>
@@ -39,6 +42,7 @@ const RichTextEditor: React.FC<RichTextEditorType> = ({
         className={`${className}`}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
       />
     </div>
   )

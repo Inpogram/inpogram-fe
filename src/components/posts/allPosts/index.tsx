@@ -1,13 +1,13 @@
 import React from 'react'
 import AllPostsHeader from './AllPostsHeader'
 import AllPostsGrid from './AllPostsGrid'
-import { IPost } from '../../../shared/interfaces'
+import { Post } from '../../../types/types'
 import AllPostsCarousel from './AllPostsCarousel'
 import Loading from '../../ui/Loading'
 
 type AllPostsType = {
   loading: boolean
-  allPosts: IPost[]
+  allPosts: Post[]
 }
 
 const AllPosts: React.FC<AllPostsType> = ({ loading, allPosts }) => {
