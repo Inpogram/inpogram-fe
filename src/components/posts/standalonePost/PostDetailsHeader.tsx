@@ -1,15 +1,10 @@
 import React from 'react'
-import BannerCard from './card/BannerCard'
-import { useAppSelector } from '../../../hooks'
-import { postDetailsSelector } from '../../../redux/selectors'
 import ReactionBar from './bar/ReactionBar'
 
 const PostDetailsHeader = () => {
-  const { initialPost } = useAppSelector(postDetailsSelector)
-  const { title } = initialPost.data
   return (
     <div>
-      <h1 className="text-[40px] mt-[1.19em] mb-[32px]">{title}</h1>
+      <h1 className="text-[40px] mt-[1.19em] mb-[32px]">{null}</h1>
       <div className="flex flex-col">
         <div className="flex flex-row gap-2">
           <div className="w-[40px] h-[40px] bg-slate-500 rounded-full"></div>

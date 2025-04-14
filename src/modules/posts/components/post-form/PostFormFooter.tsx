@@ -1,19 +1,20 @@
 import React from 'react'
-import CommonButton from '../../ui/button/CommonButton'
+import CommonButton from '../../../../components/ui/button/CommonButton'
 
-type AddPostFooterType = {
-  handleAddPost: () => void
+type PostFormFooterType = {
+  isSubmitting: boolean
   handleCancelAddPost: () => void
 }
 
-const AddPostFooter: React.FC<AddPostFooterType> = ({
-  handleAddPost: handleAddPost,
-  handleCancelAddPost: handleCancelAddPost
+const PostFormFooter: React.FC<PostFormFooterType> = ({
+  isSubmitting,
+  handleCancelAddPost
 }) => {
   return (
     <div className="flex flex-row justify-end gap-2 items-center">
       <CommonButton
-        onClick={handleAddPost}
+        type="submit"
+        disabled={isSubmitting}
         className="rounded-md bg-[#027A48] hover:bg-[#154733] flex flex-row items-center gap-2 text-white font-medium text-sm py-1 px-3 h-[30px]"
       >
         Publish
@@ -30,4 +31,4 @@ const AddPostFooter: React.FC<AddPostFooterType> = ({
   )
 }
 
-export default AddPostFooter
+export default PostFormFooter

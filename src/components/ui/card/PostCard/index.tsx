@@ -8,13 +8,13 @@ import {
   renderPostStartDate,
   renderPropertiesForPostStatus
 } from './PostCard.utils'
-import { IPost } from '../../../../shared/interfaces'
+import { Post } from '../../../../types/types'
 import moment from 'moment'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 type PostCardType = {
-  post: IPost
+  post: Post
   isOtherPosts?: boolean
 }
 
@@ -32,7 +32,7 @@ const PostCard: React.FC<PostCardType> = ({ post, isOtherPosts = false }) => {
     fontSize
   } = renderPropertiesForPostStatus(post.status)
 
-  const cardHeaderBanner = (post: IPost) =>
+  const cardHeaderBanner = (post: Post) =>
     (post && post.bannerUrl) ?? DEFAULT_IMG_URL
 
   const LinkWrapper = ({ isOtherPosts, to, className, children }) => {
